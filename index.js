@@ -9,6 +9,6 @@ addEventListener('fetch', event => {
  */
 async function handleRequest(request) {
   return new Response(`${JSON.stringify(assess('begal', 'beans'))}`, {
-    headers: { 'content-type': 'text/plain' },
+    headers: { 'content-type': 'application/json' },
   })
 }
