@@ -3,3 +3,7 @@
     - put it on my subdomain: `compare-words-worker.chantastic.workers.dev`
 - changed name via `wrangler.toml` to `compare-words`
     - re-publish
+- change to `type: webpack` in `wrangler.toml`
+- add `compare-words` lib
+    - use lib as usual. export a static assessment
+    - re-deploy

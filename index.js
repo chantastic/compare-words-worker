@@ -1,3 +1,5 @@
+import assess from 'compare-words'
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
@@ -6,7 +8,7 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-  return new Response('Hello worker!', {
+  return new Response(`${JSON.stringify(assess('begal', 'beans'))}`, {
     headers: { 'content-type': 'text/plain' },
   })
 }
