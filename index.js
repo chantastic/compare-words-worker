@@ -8,7 +8,12 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-  return new Response(`${JSON.stringify(assess('begal', 'beans'))}`, {
-    headers: { 'content-type': 'application/json' },
-  })
+  let url = new URL(request.url)
+
+  return new Response(
+    `${JSON.stringify(assess(...url.pathname.split('/').slice(1, 3)))}`,
+    {
+      headers: { 'content-type': 'application/json' },
+    },
+  )
 }
