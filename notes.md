@@ -1,16 +1,18 @@
 - `wrangler generate compare-words-worker`
 - `wrangler publish`
-    - put it on my subdomain: `compare-words-worker.chantastic.workers.dev`
+  - put it on my subdomain: `compare-words-worker.chantastic.workers.dev`
 - changed name via `wrangler.toml` to `compare-words`
-    - re-publish
+  - re-publish
 - change to `type: webpack` in `wrangler.toml`
 - add `compare-words` lib
-    - use lib as usual. export a static assessment
-    - re-deploy
+  - use lib as usual. export a static assessment
+  - re-deploy
 - i can test this thing locally using [miniflare](https://miniflare.dev/core/modules)
-    - miniflare can be run and executed using `npx miniflare {script path}`
-    - by default it doesn't support module syntax, but you can use the `-m` option
-    - unfortunately, it won't be able to render npm packages
-    - fortunately we can run it against our built script, post `wrangler build`
-    - out of the box (for this template), it lands in `script.js`
-    
+  - miniflare can be run and executed using `npx miniflare {script path}`
+  - by default it doesn't support module syntax, but you can use the `-m` option
+  - unfortunately, it won't be able to render npm packages
+  - fortunately we can run it against our built script, post `wrangler build`
+  - out of the box (for this template), it lands in `script.js`
+- looks like i can [cache responses](https://developers.cloudflare.com/workers/runtime-apis/cache)
+  - [this is the example i needed](https://developers.cloudflare.com/workers/examples/cache-api) for it to make sense
+  - tried it and it looks this cache is just for sub-requests
