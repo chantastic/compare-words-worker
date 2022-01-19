@@ -1,4 +1,4 @@
-name = "compare-words-worker"
+name = "compare-words"
 type = "javascript"
 
 account_id = ""

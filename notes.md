@@ -1,0 +1,5 @@
+- `wrangler generate compare-words-worker`
+- `wrangler publish`
+    - put it on my subdomain: `compare-words-worker.chantastic.workers.dev`
+- changed name via `wrangler.toml` to `compare-words`
+    - re-publish
